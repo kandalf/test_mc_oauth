@@ -1,0 +1,15 @@
+<h3>Services for <%= user_name %></h3>
+
+<ul>
+  <% services.each do |service| %>
+    <li>
+      <div><a href="<%= service["url"]%>"><%= service["name"] %></a></div>
+      <div><%= service["description"] %></div>
+      <% if service["running"] %>
+        <div style="color: green;">Running</div>
+      <% else %>
+        <div style="color: red;">Down</div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
